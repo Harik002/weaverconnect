@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weaver Connect - Image Gallery</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+        }
+
+        .header ul {
+            list-style: none;
+            padding: 10px;
+        }
+
+        .header ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .header ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Search Box Styles */
+        .search {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search input {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Product Gallery Styles */
+        .products {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            width: 100%;
+            max-width: 1400px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding-bottom: 10px;
+        }
+
+        .box img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .box h3 {
+            font-size: 1.2rem;
+            margin: 10px 0 5px;
+        }
+
+        .box p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Contact Us Section */
+        .contact {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Hide products that do not match the search */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="header">
+            <h1>Weaver Connect</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search">
+        <input type="text" id="searchBox" placeholder="Search products by name or price...">
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section class="products" id="products">
+        <div class="row">
+            <div class="box" data-name="Modern Textile Spinning Mill" data-cost="₹500">
+                <img src="img1.webp" alt="Modern Textile Spinning Mill">
+                <h3>Modern Textile Spinning Mill</h3>
+                <p>Cost: ₹500</p>
+            </div>
+            <div class="box" data-name="Spun Yarn" data-cost="₹700">
+                <img src="img2.jpeg" alt="Spun Yarn">
+                <h3>Spun Yarn</h3>
+                <p>Cost: ₹700</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box" data-name="Warp Yarn" data-cost="₹450">
+                <img src="img3.webp" alt="Warp Yarn">
+                <h3>Warp Yarn</h3>
+                <p>Cost: ₹450</p>
+            </div>
+            <div class="box" data-name="White Yarn" data-cost="₹300">
+                <img src="img4.jpg" alt="White Yarn">
+                <h3>White Yarn</h3>
+                <p>Cost: ₹300</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box" data-name="Multi-Coloured Yarn" data-cost="₹600">
+                <img src="img5.jpg" alt="Multi-Coloured Yarn">
+                <h3>Multi-Coloured Yarn</h3>
+                <p>Cost: ₹600</p>
+            </div>
+            <div class="box" data-name="Ring Spun Yarn" data-cost="₹650">
+                <img src="img6.jpg" alt="Ring Spun Yarn">
+                <h3>Ring Spun Yarn</h3>
+                <p>Cost: ₹650</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact" id="contact">
+        <h3>Contact Us</h3>
+        <p>Phone: +91 9087118099</p>
+        <p>Email: weaverconnect3@gmail.com</p>
+        <p>
+            At Weaver Connect, we value your experience and strive to enhance our platform based on your feedback. Your insights help us improve our app, ensuring a seamless and efficient experience for weavers and buyers alike. Thank you for being a part of Weaver Connect!
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Weaver Connect. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Search Functionality -->
+    <script>
+        document.getElementById('searchBox').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            document.querySelectorAll('.box').forEach(box => {
+                let name = box.dataset.name.toLowerCase();
+                let cost = box.dataset.cost.toLowerCase();
+                if (name.includes(filter) || cost.includes(filter)) {
+                    box.classList.remove('hidden');
+                } else {
+                    box.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weaver Connect - Image Gallery</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+        }
+
+        .header ul {
+            list-style: none;
+        }
+
+        .header ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .header ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Search Box Styles */
+        .search {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search input {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 1rem;
+        }
+
+        /* Product Gallery Styles */
+        .products {
+            display: grid; /* Use grid layout */
+            grid-template-columns: repeat(2, 1fr); /* Two images per row */
+            gap: 2in; /* Set 2-inch gap between items horizontally and vertically */
+            padding: 20px;
+        }
+
+        .box {
+            width: 100%; /* Ensure each box takes the full width of the grid item */
+            height: 300px; /* Fixed height for images */
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .box img {
+            width: 100%; /* Make the image fill the width of the box */
+            height: 100%; /* Make the image fill the height of the box */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+        }
+
+        /* About Us Section */
+        .about {
+            text-align: center;
+            padding: 40px;
+            background-color: #f4f4f4;
+        }
+
+        .about h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        .contact h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="header">
+            <h1>Weaver Connect</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search">
+        <input type="text" placeholder="Search...">
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section class="products" id="products">
+        <div class="box">
+            <img src="img.mac1.jpg" alt="Product 1">
+        </div>
+        <div class="box">
+            <img src="img.mac2.jpg" alt="Product 2">
+        </div>
+        <div class="box">
+            <img src="img.mac3.jpg" alt="Product 3">
+        </div>
+        <div class="box">
+            <img src="img.mac4.jpg" alt="Product 4">
+        </div>
+        <div class="box">
+            <img src="img.mac5.jpg" alt="Product 5">
+        </div>
+        <div class="box">
+            <img src="img.mac6.jpg" alt="Product 6">
+        </div>
+        <div class="box">
+            <img src="img.mac7.jpg" alt="Product 7">
+        </div>
+        <div class="box">
+            <img src="img.mac8.jpg" alt="Product 9">
+        </div>
+        <div class="box">
+            <img src="img.mac9.jpg" alt="Product 9">
+        </div>
+        <div class="box">
+            <img src="img.mac10.jpg" alt="Product 10">
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <h1>About Us</h1>
+        <p>
+            At Weaver Connect, we bridge the gap between tradition and technology, empowering weavers with cutting-edge solutions. Inspired by a deep-rooted passion for weaving, our journey began with a vision to support artisans and revolutionize the textile industry.
+        </p>
+        <p>
+            Our innovative textile machinery blends craftsmanship with modern automation, ensuring precision, efficiency, and sustainability. By directly connecting weavers to advanced tools and market opportunities, we eliminate middlemen and enhance profitability for artisans.
+        </p>
+        <p>
+            Rooted in heritage and driven by innovation, Weaver Connect is committed to preserving traditional weaving techniques while paving the way for a tech-enabled, eco-friendly future. Join us in redefining the textile industry—one thread at a time.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h3>Contact Us</h3>
+        <p>Phone: +91 9087118099</p>
+        <p>Email: weaverconnect3@gmail.com</p>
+        <p>
+            At Weaver Connect, we value your experience and strive to enhance our platform based on your feedback. Your insights help us improve our app, ensuring a seamless and efficient experience for weavers and buyers alike.
+        </p>
+        <p>
+            We appreciate every suggestion, review, and rating you provide, as it guides us in making Weaver Connect more user-friendly and impactful. Your support drives us to innovate and bring you the best in textile technology.
+        </p>
+        <p>Thank you for being a part of Weaver Connect! Keep sharing your feedback to help us grow together.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Weaver Connect. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+

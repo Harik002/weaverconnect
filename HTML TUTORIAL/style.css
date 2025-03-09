@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+li,h1,ul{
+    display: inline;
+}
+ul{
+    margin-left: 60%;
+}
+
+li{
+    color: grey;
+    cursor: pointer;
+
+}
+
+li:hover{
+    color: white;
+}
+input{
+    width: 60%;
+    padding: 15px;
+}
+
+.search{
+    padding: 50px;
+    text-align: center;
+}
+
+.box{
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    display: inline-block;
+    width: 500px;
+}
+
+.products{
+    text-align: center;
+}
+
+.box:hover{
+    background-color: black;
+    color: white;
+}
+
+.about{
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.Contact{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2in; /* Adds a 2-inch gap between images */
+    justify-content: center;
+    padding: 20px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
